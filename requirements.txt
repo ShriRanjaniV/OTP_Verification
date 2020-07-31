@@ -1,6 +1,5 @@
 flask_cors
 flask
-smtplib
 geopy
 sqlalchemy
 requests

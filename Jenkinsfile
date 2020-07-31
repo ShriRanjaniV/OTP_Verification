@@ -33,7 +33,7 @@ pipeline {
                
                 
                 sh '''#!/usr/bin/env bash
-                        source $WORKSPACE/miniconda/etc/profile.d/conda.sh
+                        source /home/shriranjani/workspace/miniconda/etc/profile.d/conda.sh
                         conda activate miniconda/envs/ansible-env/
                         conda create --yes -n ${BUILD_TAG} python
                         source activate ${BUILD_TAG}
@@ -58,7 +58,7 @@ pipeline {
 
     post {
         always {
-            sh '''source $WORKSPACE/miniconda/etc/profile.d/conda.sh
+            sh '''source /home/shriranjani/workspace/miniconda/etc/profile.d/conda.sh
                 conda remove --yes -n ${BUILD_TAG} --all'''
         }
         failure {

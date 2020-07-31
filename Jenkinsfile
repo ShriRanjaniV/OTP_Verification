@@ -56,8 +56,8 @@ pipeline {
 
     post {
         always {
-            sh 'source $WORKSPACE/miniconda/etc/profile.d/conda.sh
-                conda remove --yes -n ${BUILD_TAG} --all'
+            sh '''source $WORKSPACE/miniconda/etc/profile.d/conda.sh
+                conda remove --yes -n ${BUILD_TAG} --all'''
         }
         failure {
             emailext (

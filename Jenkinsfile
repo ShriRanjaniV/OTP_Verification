@@ -44,10 +44,13 @@ pipeline {
 
         stage('Test environment') {
             steps {
-                sh '''source activate ${BUILD_TAG} 
-                      pip list
-                      which pip
-                      which python
+                sh '''#!/usr/bin/env bash
+                        source /home/shriranjani/workspace/miniconda/etc/profile.d/conda.sh
+                        conda activate miniconda/envs/ansible-env/
+                        source activate ${BUILD_TAG} 
+                        pip list
+                        which pip
+                        which python
                     '''
             }
         }
